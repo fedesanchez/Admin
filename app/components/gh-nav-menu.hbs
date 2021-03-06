@@ -20,7 +20,7 @@
             <li class="relative">
                 <span {{action "transitionToOrRefreshSite" on="click"}}>
                     <LinkTo @route="site" data-test-nav="site" @current-when={{this.isOnSite}} @preventDefault={{false}}>
-                        {{svg-jar "house"}} View site
+                        {{svg-jar "house"}} Ver sitio
                     </LinkTo>
                 </span>
                 <a href="{{this.config.blogUrl}}/" class="gh-secondary-action" title="Open site in new tab" target="_blank">
@@ -29,7 +29,7 @@
             </li>
         </ul>
         <ul class="gh-nav-list gh-nav-manage">
-            <li class="gh-nav-list-h">Manage</li>
+            <li class="gh-nav-list-h">Gestionar</li>
             <li class="gh-nav-list-new relative">
                 <GhLinkToCustomViewsIndex @route="posts" @query={{reset-query-params "posts"}} data-test-nav="posts">{{svg-jar "posts"}}Posts</GhLinkToCustomViewsIndex>
                 <LinkTo @route="editor.new" @model="post" @classNames="gh-secondary-action gh-nav-new-post" @alt="New post" @title="New post" data-test-nav="new-story"><span>{{svg-jar "add-stroke"}}</span></LinkTo>
@@ -61,9 +61,9 @@
             <li>
                 {{!-- clicking the Content link whilst on the content screen should reset the filter --}}
                 {{#if (eq this.router.currentRouteName "pages")}}
-                    <LinkTo @route="pages" @query={{reset-query-params "pages"}} @classNames="active" data-test-nav="pages">{{svg-jar "page"}}Pages</LinkTo>
+                    <LinkTo @route="pages" @query={{reset-query-params "pages"}} @classNames="active" data-test-nav="pages">{{svg-jar "page"}}Páginas</LinkTo>
                 {{else}}
-                    <LinkTo @route="pages" data-test-nav="pages">{{svg-jar "page"}}Pages</LinkTo>
+                    <LinkTo @route="pages" data-test-nav="pages">{{svg-jar "page"}}Páginas</LinkTo>
                 {{/if}}
             </li>
             {{#if this.showTagsNavigation}}
@@ -72,26 +72,26 @@
             {{#if (and this.feature.members (gh-user-can-admin this.session.user))}}
                 <li>
                     {{#if (eq this.router.currentRouteName "members.index")}}
-                        <LinkTo @route="members" @current-when="members member" @query={{reset-query-params "members.index"}} data-test-nav="members">{{svg-jar "members"}}Members</LinkTo>
+                        <LinkTo @route="members" @current-when="members member" @query={{reset-query-params "members.index"}} data-test-nav="members">{{svg-jar "members"}}Miembros</LinkTo>
                     {{else}}
-                        <LinkTo @route="members" @current-when="members member" data-test-nav="members">{{svg-jar "members"}}Members</LinkTo>
+                        <LinkTo @route="members" @current-when="members member" data-test-nav="members">{{svg-jar "members"}}Miembros</LinkTo>
                     {{/if}}
                 </li>
             {{/if}}
-            <li><LinkTo @route="staff" data-test-nav="staff">{{svg-jar "staff"}}Staff</LinkTo></li>
+            <li><LinkTo @route="staff" data-test-nav="staff">{{svg-jar "staff"}}Usuarios</LinkTo></li>
         </ul>
         {{#if (gh-user-can-admin this.session.user)}}
             <ul class="gh-nav-list gh-nav-settings">
-                <li class="gh-nav-list-h">Settings</li>
+                <li class="gh-nav-list-h">Ajustes</li>
                 <li><LinkTo @route="settings.general" data-test-nav="settings">{{svg-jar "settings"}}General</LinkTo></li>
-                <li><LinkTo @route="settings.design" data-test-nav="design">{{svg-jar "paintbrush"}}Design</LinkTo></li>
-                <li><LinkTo @route="settings.code-injection" data-test-nav="code-injection">{{svg-jar "brackets"}}Code injection</LinkTo></li>
-                <li><LinkTo @route="settings.integrations" @current-when={{this.isIntegrationRoute}} data-test-nav="integrations">{{svg-jar "modules"}}Integrations</LinkTo></li>
+                <li><LinkTo @route="settings.design" data-test-nav="design">{{svg-jar "paintbrush"}}Diseño</LinkTo></li>
+                <li><LinkTo @route="settings.code-injection" data-test-nav="code-injection">{{svg-jar "brackets"}}Código extra</LinkTo></li>
+                <li><LinkTo @route="settings.integrations" @current-when={{this.isIntegrationRoute}} data-test-nav="integrations">{{svg-jar "modules"}}Integraciones</LinkTo></li>
                 <li class="relative">
                     <button class="gh-secondary-action" title="Toggle Night shift" {{action (toggle "nightShift" this.feature)}}>
                         <span>{{svg-jar "nightshift"}}</span>
                     </button>
-                    <LinkTo @route="settings.labs" data-test-nav="labs">{{svg-jar "labs"}}Labs</LinkTo>
+                    <LinkTo @route="settings.labs" data-test-nav="labs">{{svg-jar "labs"}}Experimental</LinkTo>
                 </li>
             </ul>
         {{/if}}
