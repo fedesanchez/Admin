@@ -30,7 +30,7 @@
                     {{svg-jar "idea" class="w7 h7 fill-blue"}}
                     <p class="ma0 pa0 ml1 nudge-top--2">
                         {{this.infoMessage}}
-                        <button type="button" class="blue fw5" {{action (mut this.infoMessage "")}}>Got it</button>
+                        <button type="button" class="blue fw5" {{action (mut this.infoMessage "")}}>Entendido</button>
                     </p>
                 </div>
             </div>
@@ -68,11 +68,11 @@
         --}}
         <GhKoenigEditor
             @title={{readonly this.post.titleScratch}}
-            @titlePlaceholder={{concat (capitalize this.post.displayName) " Title"}}
+            @titlePlaceholder={{concat "Título " (capitalize this.post.displayName) }}
             @onTitleChange={{action "updateTitleScratch"}}
             @onTitleBlur={{action (perform this.saveTitle)}}
             @body={{readonly this.post.scratch}}
-            @bodyPlaceholder={{concat "Begin writing your " this.post.displayName "..."}}
+            @bodyPlaceholder={{concat "Empezar a escribir tu " this.post.displayName "..."}}
             @bodyAutofocus={{this.shouldFocusEditor}}
             @onBodyChange={{action "updateScratch"}}
             @headerOffset={{editor.headerHeight}}

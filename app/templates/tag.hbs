@@ -4,7 +4,7 @@
             <h2 class="gh-canvas-title" data-test-screen-title>
                 <LinkTo @route="tags" data-test-link="tags-back">Tags</LinkTo>
                 <span>{{svg-jar "arrow-right"}}</span>
-                {{if this.tag.isNew "New tag" this.tag.name}}
+                {{if this.tag.isNew "Nuevo tag" this.tag.name}}
             </h2>
             <section class="view-actions">
                 <GhTaskButton @task={{this.save}} @type="button" @class="gh-btn gh-btn-blue gh-btn-icon" @data-test-button="save" />
@@ -19,7 +19,7 @@
 
     {{#unless this.tag.isNew}}
         <button type="button" class="gh-btn gh-btn-red gh-btn-icon mb15" {{on "click" (action "openDeleteTagModal")}}>
-            <span>Delete tag</span>
+            <span>Borrar tag</span>
         </button>
     {{/unless}}
 </section>

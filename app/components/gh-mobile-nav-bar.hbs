@@ -1,4 +1,4 @@
-<LinkTo @route="editor.new" @model="post" data-test-mobile-nav="new-post">{{svg-jar "pen"}}New post</LinkTo>
+<LinkTo @route="editor.new" @model="post" data-test-mobile-nav="new-post">{{svg-jar "pen"}}Crear post</LinkTo>
 {{#if (eq this.router.currentRouteName "posts")}}
     <LinkTo @route="posts" @query={{hash type=null}} @classNames="active" data-test-mobile-nav="posts">{{svg-jar "content"}}Posts</LinkTo>
 {{else}}

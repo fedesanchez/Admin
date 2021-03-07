@@ -1,17 +1,17 @@
-<header class="gh-publishmenu-heading">Ready to publish your {{this.post.displayName}}?</header>
+<header class="gh-publishmenu-heading">Listo para publicar tu {{this.post.displayName}}?</header>
 <section class="gh-publishmenu-content">
     <div class="gh-publishmenu-section">
         <div class="gh-publishmenu-radio {{if (eq this.saveType "publish") "active"}}" {{action "setSaveType" "publish" on="click"}}>
             <div class="gh-publishmenu-radio-button" data-test-publishmenu-published-option></div>
             <div class="gh-publishmenu-radio-content">
-                <div class="gh-publishmenu-radio-label">Set it live now</div>
+                <div class="gh-publishmenu-radio-label">Ponlo en vivo ahora</div>
                 <div class="gh-publishmenu-radio-desc">Publish this {{this.post.displayName}} immediately</div>
             </div>
         </div>
         <div class="gh-publishmenu-radio {{if (eq this.saveType "schedule") "active"}}" {{action "setSaveType" "schedule" on="click"}}>
             <div class="gh-publishmenu-radio-button" data-test-publishmenu-scheduled-option></div>
             <div class="gh-publishmenu-radio-content">
-                <div class="gh-publishmenu-radio-label">Schedule it for later</div>
+                <div class="gh-publishmenu-radio-label">Prográmalo para más tarde</div>
                 <GhDateTimePicker
                     @date={{this.post.publishedAtBlogDate}}
                     @time={{this.post.publishedAtBlogTime}}
@@ -24,7 +24,7 @@
                     @minDate={{this._minDate}}
                     @isActive={{eq this.saveType "schedule"}}
                 />
-                <div class="gh-publishmenu-radio-desc">Set automatic future publish date</div>
+                <div class="gh-publishmenu-radio-desc">Establecer fecha de publicación futura automática</div>
             </div>
         </div>
     </div>
@@ -36,7 +36,7 @@
                     <div class="gh-loading-spinner" style="zoom: 50%"></div>
                 {{else}}
                     <div class="gh-publishmenu-email-label {{if this.disableEmailOption "pe-none"}}">
-                        <label class="gh-publishmenu-radio-label mb3 {{if this.disableEmailOption "midgrey"}}">Send by email to</label>
+                        <label class="gh-publishmenu-radio-label mb3 {{if this.disableEmailOption "midgrey"}}">Enviar por correo electrónico a</label>
 
                         <div class="form-group">
                             <div class="gh-publishmenu-send-to-option">

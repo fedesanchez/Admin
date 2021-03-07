@@ -1,6 +1,6 @@
 <section class="gh-canvas">
     <GhCanvasHeader class="gh-canvas-header members-header">
-        <h2 class="gh-canvas-title" data-test-screen-title>Members</h2>
+        <h2 class="gh-canvas-title" data-test-screen-title>Miembros</h2>
         <section class="view-actions">
             <GhMembersFilter
                 @selectedLabel={{this.selectedLabel}}
@@ -18,7 +18,7 @@
             <div class="relative gh-members-header-search">
                 {{svg-jar "search" class="gh-input-search-icon"}}
                 <GhTextInput
-                    placeholder="Search members..."
+                    placeholder="Buscar miembros..."
                     @value={{this.searchText}}
                     @input={{this.search}}
                     class="gh-members-list-searchfield {{if this.searchText "active"}}" />
@@ -30,34 +30,34 @@
                     @data-test-user-actions="true">
                     <span>
                         {{svg-jar "settings"}}
-                        <span class="hidden">Actions</span>
+                        <span class="hidden">Acciones</span>
                     </span>
                 </GhDropdownButton>
                 <GhDropdown @name="members-actions-menu" @tagName="ul"
                     @classNames="gh-member-actions-menu dropdown-menu dropdown-triangle-top-right">
                     <li>
                         <LinkTo @route="members.import" class="mr2" data-test-link="import-csv">
-                            <span>Import members</span>
+                            <span>Importar miembros</span>
                         </LinkTo>
                     </li>
                     <li class="{{if this.members.length "" "disabled"}}">
                         {{#if this.members.length}}
                             <button class="mr2" {{on "click" this.exportData}}>
                                 {{#if this.showingAll}}
-                                    <span>Export all members</span>
+                                    <span>Exportar todos los miembros</span>
                                 {{else}}
-                                <span>Export selected members ({{this.members.length}})</span>
+                                <span>Exportar miembros seleccionados ({{this.members.length}})</span>
                                 {{/if}}
                             </button>
                         {{else}}
                             <button class="mr2" disabled="true">
-                                <span>Export selected members (0)</span>
+                                <span>Exportar miembros seleccionados (0)</span>
                             </button>
                         {{/if}}
                     </li>
                 </GhDropdown>
             </span>
-            <LinkTo @route="member.new" class="gh-btn gh-btn-green" data-test-new-member-button="true"><span>New member</span></LinkTo>
+            <LinkTo @route="member.new" class="gh-btn gh-btn-green" data-test-new-member-button="true"><span>Nuevo miembro</span></LinkTo>
         </section>
     </GhCanvasHeader>
 
@@ -92,10 +92,10 @@
                             <div class="no-posts">
                                 {{svg-jar "members-placeholder" class="gh-members-placeholder"}}
                                 {{#if this.showingAll}}
-                                    <h3>No members yet</h3>
+                                    <h3>No hay miembros todavía</h3>
                                     <GhMembersNoMembers @afterCreate={{this.refreshData}} />
                                 {{else}}
-                                    <h3>No members match the current filter</h3>
+                                    <h3>No hay miembros que coincidan con el filtro</h3>
                                 {{/if}}
                             </div>
                         </li>

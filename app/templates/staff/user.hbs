@@ -1,7 +1,7 @@
 <section class="gh-canvas">
     <GhCanvasHeader class="gh-canvas-header">
         <h2 class="gh-canvas-title" data-test-screen-title>
-            <LinkTo @route="staff" data-test-staff-link={{true}}>Staff</LinkTo>
+            <LinkTo @route="staff" data-test-staff-link={{true}}>Usuario</LinkTo>
             <span>{{svg-jar "arrow-right"}}</span>
             {{this.user.name}}
 
@@ -43,20 +43,20 @@
                         {{#if this.deleteUserActionIsVisible}}
                             <li>
                                 <button {{action "toggleDeleteUserModal"}} class="delete" data-test-delete-button>
-                                    Delete User
+                                    Borrar Usuario
                                 </button>
                             </li>
                             {{#if this.user.isActive}}
                                 <li>
                                     <button {{action "toggleSuspendUserModal"}} class="suspend" data-test-suspend-button>
-                                        Suspend User
+                                        Suspender Usuario
                                     </button>
                                 </li>
                             {{/if}}
                             {{#if this.user.isSuspended}}
                                 <li>
                                     <button {{action "toggleUnsuspendUserModal"}} class="unsuspend" data-test-unsuspend-button>
-                                        Un-suspend User
+                                        De-suspender Usuario
                                     </button>
                                 </li>
                             {{/if}}
@@ -94,7 +94,7 @@
     </GhCanvasHeader>
 
     {{#if user.isLocked}}
-        <p class="gh-box gh-box-alert">{{svg-jar "info"}}This user account is locked. To sign in, ask this user to perform a password reset on their account.</p>
+        <p class="gh-box gh-box-alert">{{svg-jar "info"}}Esta cuenta de usuario está bloqueada. Para iniciar sesión, solicite a este usuario que restablezca la contraseña de su cuenta.</p>
     {{/if}}
 
     {{!-- <div class="bg-"> --}}
@@ -127,7 +127,7 @@
                     <fieldset class="user-details-bottom">
 
                         <GhFormGroup @errors={{this.user.errors}} @hasValidated={{this.user.hasValidated}} @property="name" @class="first-form-group">
-                            <label for="user-name">Full Name</label>
+                            <label for="user-name">Nombre Completo</label>
                             <GhTextInput
                                 @id="user-name"
                                 @class="user-name"
@@ -141,7 +141,7 @@
                             {{#if this.user.errors.name}}
                                 <GhErrorMessage @errors={{this.user.errors}} @property="name" data-test-error="user-name" />
                             {{else}}
-                                <p>Use your real name so people can recognise you</p>
+                                <p>Usar tu nombre real para que la gente te pueda reconocer</p>
                             {{/if}}
                         </GhFormGroup>
 
@@ -184,7 +184,7 @@
                             {{else}}
                                 <span>{{this.user.email}}</span>
                             {{/if}}
-                            <p>Used for notifications</p>
+                            <p>Utilizado para notificaciones</p>
                         </GhFormGroup>
 
                         {{#if this.rolesDropdownIsVisible}}
@@ -200,12 +200,12 @@
                                         @update={{action "changeRole"}}
                                     />
                                 </span>
-                                <p>What permissions should this user have?</p>
+                                <p>¿Qué permisos debería tener este usuario?</p>
                             </div>
                         {{/if}}
 
                         <GhFormGroup @errors={{this.user.errors}} @hasValidated={{this.user.hasValidated}} @property="location">
-                            <label for="user-location">Location</label>
+                            <label for="user-location">Localización</label>
                             <GhTextInput
                                 @id="user-location"
                                 @value={{readonly this.user.location}}
@@ -213,7 +213,7 @@
                                 @focus-out={{action "validate" "location" target=this.user}}
                                 data-test-location-input={{true}} />
                             <GhErrorMessage @errors={{this.user.errors}} @property="location" data-test-error="user-location" />
-                            <p>Where in the world do you live?</p>
+                            <p>¿En qué parte del mundo vives?</p>
                         </GhFormGroup>
 
                         <GhFormGroup @errors={{this.user.errors}} @hasValidated={{this.user.hasValidated}} @property="website">
@@ -229,11 +229,11 @@
                                 @focus-out={{action "validate" "website" target=this.user}}
                                 data-test-website-input={{true}} />
                             <GhErrorMessage @errors={{this.user.errors}} @property="website" data-test-error="user-website" />
-                            <p>Have a website or blog other than this one? Link it!</p>
+                            <p>¿Tiene un sitio web o blog diferente a este? ¡Vincularlo!</p>
                         </GhFormGroup>
 
                         <GhFormGroup @errors={{this.user.errors}} @hasValidated={{this.user.hasValidated}} @property="facebook">
-                            <label for="user-facebook">Facebook Profile</label>
+                            <label for="user-facebook">Facebook</label>
                             <GhTextInput
                                 @type="url"
                                 @placeholder="https://www.facebook.com/username"
@@ -246,11 +246,11 @@
                                 data-test-facebook-input={{true}}
                             />
                             <GhErrorMessage @errors={{this.user.errors}} @property="facebook" data-test-error="user-facebook" />
-                            <p>URL of your personal Facebook Profile</p>
+                            <p>URL de su perfil personal de Facebook</p>
                         </GhFormGroup>
 
                         <GhFormGroup @errors={{this.user.errors}} @hasValidated={{this.user.hasValidated}} @property="twitter">
-                            <label for="user-twitter">Twitter Profile</label>
+                            <label for="user-twitter">Twitter</label>
                             <GhTextInput
                                 @type="url"
                                 @placeholder="https://twitter.com/username"
@@ -263,7 +263,7 @@
                                 data-test-twitter-input={{true}}
                             />
                             <GhErrorMessage @errors={{this.user.errors}} @property="twitter" data-test-error="user-twitter" />
-                            <p>URL of your personal Twitter profile</p>
+                            <p>URL de su perfil personal de Twitter</p>
                         </GhFormGroup>
 
                         <GhFormGroup @errors={{this.user.errors}} @hasValidated={{this.user.hasValidated}} @property="bio" @class="bio-container">
@@ -277,7 +277,7 @@
                             />
                             <GhErrorMessage @errors={{this.user.errors}} @property="bio" data-test-error="user-bio" />
                             <p>
-                                Write about you, in 200 characters or less.
+                                Escribe sobre ti, en 200 caracteres o menos.
                                 {{gh-count-characters this.user.bio}}
                             </p>
                         </GhFormGroup>
@@ -294,7 +294,7 @@
                         <fieldset class="user-details-form">
                             {{#if this.isOwnProfile}}
                                 <GhFormGroup @errors={{this.user.errors}} @hasValidated={{this.user.hasValidated}} @property="password">
-                                    <label for="user-password-old">Old Password</label>
+                                    <label for="user-password-old">Password Viejo</label>
                                     <GhTextInput
                                         @type="password"
                                         @id="user-password-old"
@@ -311,7 +311,7 @@
                             {{/if}}
 
                             <GhFormGroup @errors={{this.user.errors}} @hasValidated={{this.user.hasValidated}} @property="newPassword">
-                                <label for="user-password-new">New Password</label>
+                                <label for="user-password-new">Password Nuevo</label>
                                 <GhTextInput
                                     @value={{readonly this.user.newPassword}}
                                     @type="password"
@@ -327,7 +327,7 @@
                             </GhFormGroup>
 
                             <GhFormGroup @errors={{this.user.errors}} @hasValidated={{this.user.hasValidated}} @property="ne2Password">
-                                <label for="user-new-password-verification">Verify Password</label>
+                                <label for="user-new-password-verification">Verificar Password</label>
                                 <GhTextInput
                                     @value={{readonly this.user.ne2Password}}
                                     @type="password"
@@ -342,7 +342,7 @@
                             </GhFormGroup>
 
                             <div class="form-group">
-                                <GhTaskButton @buttonText="Change Password" @idleClass="gh-btn-red" @class="gh-btn gh-btn-icon button-change-password" @task={{this.user.saveNewPassword}} data-test-save-pw-button="true" />
+                                <GhTaskButton @buttonText="Cambiar Password" @idleClass="gh-btn-red" @class="gh-btn gh-btn-icon button-change-password" @task={{this.user.saveNewPassword}} data-test-save-pw-button="true" />
                             </div>
                         </fieldset>
                     </div>
@@ -354,7 +354,7 @@
                     <div class="pa5">
                         <fieldset class="user-details-form">
                             <GhFormGroup>
-                                <label for="personal-token">Personal Token</label>
+                                <label for="personal-token">Token Personal</label>
                                 <GhTextInput
                                         @id="personal-token"
                                         @value={{readonly this.personalToken}}
@@ -363,17 +363,17 @@
                                         onclick="this.select()"
                                     />
                                 <p>
-                                    Give apps personal access without sharing your email/password.
+                                    Otorgue acceso personal a las aplicaciones sin compartir su correo electrónico / contraseña.
                                 </p>
                                 {{#if this.personalTokenRegenerated}}
-                                    <p class="green"> Personal Token was successfully regenerated </p>
+                                    <p class="green"> El token personal se ha regenerado con éxito </p>
                                 {{/if}}
 
                             </GhFormGroup>
 
                             <div class="form-group">
                                 <button class="gh-btn gh-btn-icon gh-btn-red" {{action "confirmRegenerateTokenModal"}}>
-                                    <span>Regenerate</span>
+                                    <span>Regenerar</span>
                                 </button>
                                 {{#if this.showRegenerateTokenModal}}
                                     <GhFullscreenModal @modal="regenerate-token"

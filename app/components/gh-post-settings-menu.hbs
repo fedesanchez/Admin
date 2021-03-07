@@ -2,7 +2,7 @@
     <div id="entry-controls">
         <div class="{{if this.isViewingSubview 'settings-menu-pane-out-left' 'settings-menu-pane-in'}} settings-menu settings-menu-pane">
             <div class="settings-menu-header">
-                <h4>{{capitalize this.post.displayName}} settings</h4>
+                <h4>Ajustes del {{capitalize this.post.displayName}}</h4>
                 <button aria-label="Close" class="close settings-menu-header-action" {{action "closeMenus" target=this.ui}} data-test-close-settings-menu>
                     {{svg-jar "close"}}<span class="hidden">Close</span>
                 </button>
@@ -10,7 +10,7 @@
             <div class="settings-menu-content">
                 <GhImageUploaderWithPreview
                     @image={{this.post.featureImage}}
-                    @text={{concat "Upload " this.post.displayName " image"}}
+                    @text={{concat "Subir imagen de " this.post.displayName }}
                     @allowUnsplash={{true}}
                     @update={{action "setCoverImage"}}
                     @remove={{action "clearCoverImage"}}
@@ -26,7 +26,7 @@
                         </a>
                         {{else}}
                         <a class="post-view-link" target="_blank" href="{{this.post.previewUrl}}">
-                            Preview {{svg-jar "external"}}
+                            Previsualizar {{svg-jar "external"}}
                         </a>
                         {{/if}}
                     {{/unless}}
@@ -47,9 +47,9 @@
 
                 <div class="form-group">
                     {{#if (or this.post.isDraft this.post.isPublished this.post.pastScheduledTime)}}
-                        <label>Publish date</label>
+                        <label>Fecha de publicación</label>
                     {{else}}
-                        <label>Scheduled date</label>
+                        <label>Fecha programada</label>
                     {{/if}}
                     <GhDateTimePicker
                         @date={{this.post.publishedAtBlogDate}}
@@ -64,7 +64,7 @@
                         @isActive={{and this.showSettingsMenu (not this.isViewingSubview)}}
                     />
                     {{#unless (or this.post.isDraft this.post.isPublished this.post.pastScheduledTime)}}
-                    <p>Use the publish menu to re-schedule</p>
+                    <p>Utilice el menú de publicación para reprogramar</p>
                     {{/unless}}
                 </div>
 
@@ -85,7 +85,7 @@
 
 
                 <GhFormGroup @errors={{this.post.errors}} @hasValidated={{this.post.hasValidated}} @property="customExcerpt">
-                    <label for="custom-excerpt">Excerpt</label>
+                    <label for="custom-excerpt">Extracto</label>
                     <GhTextarea
                         @class="post-setting-custom-excerpt"
                         @id="custom-excerpt"
@@ -101,7 +101,7 @@
 
                 {{#unless this.session.user.isAuthorOrContributor}}
                     <GhFormGroup @class="for-select" @errors={{this.post.errors}} @hasValidated={{this.post.hasValidated}} @property="authors" data-test-input="authors">
-                        <label for="author-list">Authors</label>
+                        <label for="author-list">Autores</label>
                         <GhPsmAuthorsInput @selectedAuthors={{this.post.authors}} @updateAuthors={{action "changeAuthors"}} @triggerId="author-list" />
                         <GhErrorMessage @errors={{this.post.errors}} @property="authors" data-test-error="authors" />
                     </GhFormGroup>
@@ -111,37 +111,37 @@
                     <li class="nav-list-item" {{action "showSubview" "meta-data"}} data-test-button="meta-data">
                         <button type="button">
                             <b>Meta data</b>
-                            <span>Extra content for search engines</span>
+                            <span>Contenido extra para motores de búsqueda</span>
                         </button>
                         {{svg-jar "arrow-right"}}
                     </li>
                     <li class="nav-list-item" {{action "showSubview" "twitter-data"}} data-test-button="twitter-data">
                         <button type="button">
-                            <b>Twitter card</b>
-                            <span>Customise structured data for Twitter</span>
+                            <b>Twitter</b>
+                            <span>Personaliza datos estructurados para Twitter</span>
                         </button>
                         {{svg-jar "arrow-right"}}
                     </li>
                     <li class="nav-list-item" {{action "showSubview" "facebook-data"}} data-test-button="facebook-data">
                         <button type="button">
-                            <b>Facebook card</b>
-                            <span>Customise Open Graph data</span>
+                            <b>Facebook</b>
+                            <span>Personalizar datos de Open Graph</span>
                         </button>
                         {{svg-jar "arrow-right"}}
                     </li>
                     {{#if (and this.feature.members (eq this.post.displayName "post") showEmailNewsletter)}}
                         <li class="nav-list-item" {{action "showSubview" "email-settings"}} data-test-button="email-settings">
                             <button type="button">
-                                <b>Email newsletter</b>
-                                <span>Customise email settings</span>
+                                <b>Newsletter</b>
+                                <span>Personalizar la configuración del correo electrónico</span>
                             </button>
                             {{svg-jar "arrow-right"}}
                         </li>
                     {{/if}}
                     <li class="nav-list-item" {{action "showSubview" "codeinjection"}} data-test-button="codeinjection">
                         <button type="button">
-                            <b>Code injection</b>
-                            <span>Add styles/scripts to the header &amp; footer</span>
+                            <b>Inyección de código</b>
+                            <span>Agregue estilos / scripts al encabezado & amp; pie de página</span>
                         </button>
                         {{svg-jar "arrow-right"}}
                     </li>
@@ -158,7 +158,7 @@
                             data-test-checkbox="featured"
                         >
                         <span class="input-toggle-component"></span>
-                        <p>Feature this {{this.post.displayName}}</p>
+                        <p>Destacar este {{this.post.displayName}}</p>
                     </label>
                 </div>
                 {{/unless}}
@@ -168,7 +168,7 @@
                     @onTemplateSelect={{action (mut this.post.customTemplate)}} />
 
                 {{#unless this.post.isNew}}
-                    <button type="button" class="gh-btn gh-btn-hover-red gh-btn-icon settings-menu-delete-button" {{action "deletePost"}}><span>{{svg-jar "trash"}} Delete {{this.post.displayName}}</span></button>
+                    <button type="button" class="gh-btn gh-btn-hover-red gh-btn-icon settings-menu-delete-button" {{action "deletePost"}}><span>{{svg-jar "trash"}} Borrar {{this.post.displayName}}</span></button>
                 {{/unless}}
 
                 </form>
@@ -188,7 +188,7 @@
                         <div class="settings-menu-content">
                             <form {{action "discardEnter" on="submit"}}>
                                 <GhFormGroup @errors={{this.post.errors}} @hasValidated={{this.post.hasValidated}} @property="metaTitle">
-                                    <label for="meta-title">Meta title</label>
+                                    <label for="meta-title">Meta título</label>
                                     <GhTextInput
                                         @class="post-setting-meta-title"
                                         @id="meta-title"
@@ -203,7 +203,7 @@
                                 </GhFormGroup>
 
                                 <GhFormGroup @errors={{this.post.errors}} @hasValidated={{this.post.hasValidated}} @property="metaDescription">
-                                    <label for="meta-description">Meta description</label>
+                                    <label for="meta-description">Meta descripción</label>
                                     <GhTextarea
                                         @class="post-setting-meta-description"
                                         @id="meta-description"
@@ -218,7 +218,7 @@
                                 </GhFormGroup>
 
                                 <GhFormGroup @errors={{this.post.errors}} @hasValidated={{this.post.hasValidated}} @property="canonicalUrl">
-                                    <label for="canonicalUrl">Canonical URL</label>
+                                    <label for="canonicalUrl">URL Canónica</label>
                                     <GhTextInput
                                         @class="post-setting-canonicalUrl"
                                         @name="post-setting-canonicalUrl"
@@ -231,7 +231,7 @@
                                 </GhFormGroup>
 
                                 <div class="form-group">
-                                    <label>Search Engine Result Preview</label>
+                                    <label>Vista previa de resultados del motor de búsqueda</label>
                                     <div class="seo-preview">
                                         <div class="seo-preview-title">{{truncate this.seoTitle 70}}</div>
                                         <div class="seo-preview-link">{{truncate this.seoURL 70}}</div>
@@ -245,7 +245,7 @@
                     {{#if (eq this.subview "twitter-data")}}
                         <div class="settings-menu-header subview">
                             <button aria-label="Back" {{action "closeSubview"}} class="back settings-menu-header-action" data-test-button="close-psm-subview">{{svg-jar "arrow-left"}}<span class="hidden">Back</span></button>
-                            <h4>Twitter card</h4>
+                            <h4>Twitter</h4>
                             <div style="width:23px;"></div>
                         </div>
 
@@ -260,7 +260,7 @@
                                     @remove={{action "clearTwitterImage"}}
                                 />
                                 <GhFormGroup @errors={{this.post.errors}} @hasValidated={{this.post.hasValidated}} @property="twitterTitle">
-                                    <label for="twitter-title">Twitter title</label>
+                                    <label for="twitter-title">Título Twitter</label>
                                     <GhTextInput
                                         @class="post-setting-twitter-title"
                                         @id="twitter-title"
@@ -275,7 +275,7 @@
                                 </GhFormGroup>
 
                                 <GhFormGroup @errors={{this.post.errors}} @hasValidated={{this.post.hasValidated}} @property="twitterDescription">
-                                    <label for="twitter-description">Twitter description</label>
+                                    <label for="twitter-description">Descripción Twitter</label>
                                     <GhTextarea
                                         @class="post-setting-twitter-description"
                                         @id="twitter-description"
@@ -290,7 +290,7 @@
                                 </GhFormGroup>
 
                                 <div class="form-group">
-                                    <label>Preview</label>
+                                    <label>Previsualización</label>
                                     <div class="gh-twitter-preview">
                                         {{#if this.twitterImage}}
                                         <div class="gh-twitter-preview-image" style={{background-image-style this.twitterImage}}></div>
@@ -325,7 +325,7 @@
                     {{#if (eq this.subview "facebook-data")}}
                         <div class="settings-menu-header subview">
                             <button aria-label="Back" {{action "closeSubview"}} class="back settings-menu-header-action" data-test-button="close-psm-subview">{{svg-jar "arrow-left"}}<span class="hidden">Back</span></button>
-                            <h4>Facebook card</h4>
+                            <h4>Facebook</h4>
                             <div style="width:23px;"></div>
                         </div>
 
@@ -339,7 +339,7 @@
                                     @remove={{action "clearOgImage"}}
                                 />
                                 <GhFormGroup @errors={{this.post.errors}} @hasValidated={{this.post.hasValidated}} @property="ogTitle">
-                                    <label for="og-title">Facebook title</label>
+                                    <label for="og-title">Título Facebook</label>
                                     <GhTextInput
                                         @class="post-setting-og-title"
                                         @id="og-title"
@@ -354,7 +354,7 @@
                                 </GhFormGroup>
 
                                 <GhFormGroup @errors={{this.post.errors}} @hasValidated={{this.post.hasValidated}} @property="ogDescription">
-                                    <label for="og-description">Facebook description</label>
+                                    <label for="og-description">Descripción Facebook</label>
                                     <GhTextarea
                                         @class="post-setting-og-description"
                                         @id="og-description" @name="post-setting-og-description"
@@ -394,7 +394,7 @@
                     {{#if (eq this.subview "codeinjection")}}
                         <div class="settings-menu-header subview">
                             <button aria-label="Back" {{action "closeSubview"}} class="back settings-menu-header-action" data-test-button="close-psm-subview">{{svg-jar "arrow-left"}}<span class="hidden">Back</span></button>
-                            <h4>Code injection</h4>
+                            <h4>Inyección de código</h4>
                             <div style="width:23px;"></div>
                         </div>
 

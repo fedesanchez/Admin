@@ -1,12 +1,12 @@
 <section class="gh-canvas">
     <GhCanvasHeader class="gh-canvas-header">
         <h2 class="gh-canvas-title" data-test-screen-title>
-            Labs
+            Experimental
         </h2>
     </GhCanvasHeader>
 
     <section class="view-container settings-debug">
-        <p class="gh-box gh-box-tip">{{svg-jar "idea"}}This is a testing ground for new or experimental features. They may change, break or inexplicably disappear at any time.</p>
+        <p class="gh-box gh-box-tip">{{svg-jar "idea"}}Este es un campo de pruebas para funciones nuevas o experimentales. Pueden cambiar, romperse o desaparecer inexplicablemente en cualquier momento.</p>
 
         {{#if this.session.user.isOwner}}
         <div class="gh-setting-header"></div>
@@ -14,14 +14,14 @@
             <div class="flex flex-column br3 shadow-1 bg-grouped-table mt2 pa5 gh-setting-linkrow">
                 <div class="gh-setting-first gh-setting-last">
                     <div class="gh-setting-content">
-                            <div class="gh-setting-title">Members</div>
-                            <div class="gh-setting-desc">Create registered members and take subscription payments</div>
+                            <div class="gh-setting-title">Miembros</div>
+                            <div class="gh-setting-desc">Cree miembros registrados y acepte pagos de suscripción</div>
                     </div>
                     <div class="gh-setting-action flex items-center midgrey">
                         {{#if this.feature.labs.members}}
-                            <span class="gh-badge">Enabled</span>
+                            <span class="gh-badge">Habilitado</span>
                         {{else}}
-                            <span>Configure</span>
+                            <span>Configurar</span>
                         {{/if}}
                         {{svg-jar "arrow-right" class="w6 h6 fill-midgrey pa1 nr2 ml2"}}
                     </div>
@@ -29,12 +29,12 @@
             </div>
         </LinkTo>
         {{/if}}
-        <div class="gh-setting-header">Migration options</div>
+        <div class="gh-setting-header">Opciones de Migración</div>
         <div class="flex flex-column br3 shadow-1 bg-grouped-table pa5 mt2">
             <div class="gh-setting-first">
                 <div class="gh-setting-content">
-                    <div class="gh-setting-title">Import content</div>
-                    <div class="gh-setting-desc">Import posts from another Ghost installation</div>
+                    <div class="gh-setting-title">Importar contenido</div>
+                    <div class="gh-setting-desc">Importar posts desde otra instalación de Ghost</div>
                 </div>
                 <div class="gh-setting-action">
                     <form id="settings-import" enctype="multipart/form-data">
@@ -54,9 +54,9 @@
                 <div class="gh-import-errors {{if this.importSuccessful "gh-import-errors-alert"}}" data-test-import-errors>
                     <div class="gh-import-errors-title">
                         {{#if this.importSuccessful}}
-                            Import successful with warnings
+                            Importación exitosa con advertencias
                         {{else}}
-                            Import failed
+                            Importación fallida
                         {{/if}}
                     </div>
 
@@ -78,17 +78,17 @@
 
             <div class="gh-setting">
                 <div class="gh-setting-content">
-                    <div class="gh-setting-title">Export your content</div>
-                    <div class="gh-setting-desc">Download all of your posts and settings in a single, glorious JSON file</div>
+                    <div class="gh-setting-title">Exportar tu contenido</div>
+                    <div class="gh-setting-desc">Descargue todas sus publicaciones y configuraciones en un solo archivo JSON glorioso</div>
                 </div>
                 <div class="gh-setting-action">
-                    <button type="button" class="gh-btn gh-btn-hover-blue" {{action "downloadFile" "db"}}><span>Export</span></button>
+                    <button type="button" class="gh-btn gh-btn-hover-blue" {{action "downloadFile" "db"}}><span>Exportar</span></button>
                 </div>
             </div>
             <div class="gh-setting-last">
                 <div class="gh-setting-content">
-                    <div class="gh-setting-title">Delete all content</div>
-                    <div class="gh-setting-desc">Permanently delete all posts and tags from the database, a hard reset</div>
+                    <div class="gh-setting-title">Borrar todo el contenido</div>
+                    <div class="gh-setting-desc">Elimine permanentemente todas las publicaciones y etiquetas de la base de datos, un restablecimiento completo</div>
                 </div>
                 <div class="gh-setting-action">
                     <button type="button" class="gh-btn gh-btn-hover-red js-delete" {{action "toggleDeleteAllModal"}}><span>Delete</span></button>
@@ -96,12 +96,12 @@
             </div>
         </div>
 
-        <div class="gh-setting-header">Beta features</div>
+        <div class="gh-setting-header">Funciones beta</div>
         <div class="flex flex-column br3 shadow-1 bg-grouped-table pa5 mt2">
             <div class="gh-setting-first">
                 <div class="gh-setting-content">
-                    <div class="gh-setting-title">Night shift</div>
-                    <div class="gh-setting-desc">Swap Ghost admin's colours to a dark background which is easy on the eyes</div>
+                    <div class="gh-setting-title">Modo nocturno</div>
+                    <div class="gh-setting-desc">Cambie los colores del administrador de Ghost a un fondo oscuro que sea agradable a la vista</div>
                 </div>
                 <div class="gh-setting-action">
                     <div class="for-switch"><GhFeatureFlag @flag="nightShift" /></div>
@@ -117,8 +117,8 @@
                     as |uploader|
                 >
                 <div class="gh-setting-content">
-                    <div class="gh-setting-title">Redirects</div>
-                    <div class="gh-setting-desc">Configure redirects for old or moved content, more info in <a href="https://ghost.org/docs/tutorials/implementing-redirects/">the docs</a></div>
+                    <div class="gh-setting-title">Redirecciones</div>
+                    <div class="gh-setting-desc">Configure redirecciones para contenido antiguo o movido, más información en <a href="https://ghost.org/docs/tutorials/implementing-redirects/">the docs</a></div>
                     {{#each uploader.errors as |error|}}
                         <div class="gh-setting-error" data-test-error="redirects">{{or error.context error.message}}</div>
                     {{/each}}
@@ -135,15 +135,15 @@
                         >
                             <span>
                                 {{#if this.redirectSuccess}}
-                                    {{svg-jar "check-circle"}} Uploaded
+                                    {{svg-jar "check-circle"}} Subido
                                 {{else if this.redirectFailure}}
-                                    {{svg-jar "retry"}} Upload Failed
+                                    {{svg-jar "retry"}} Subida Fallida
                                 {{else}}
-                                    Upload redirects JSON
+                                    Subir JSON de redirecciones
                                 {{/if}}
                             </span>
                         </button>
-                        <span><a href="#" {{action "downloadFile" "redirects/json"}} data-test-link="download-redirects">Download current redirects</a></span>
+                        <span><a href="#" {{action "downloadFile" "redirects/json"}} data-test-link="download-redirects">Descargar redireccionamientos actuales</a></span>
                     {{/if}}
 
                     <div style="display:none">
@@ -162,8 +162,8 @@
                     as |uploader|
                 >
                 <div class="gh-setting-content">
-                    <div class="gh-setting-title">Routes</div>
-                    <div class="gh-setting-desc">Configure dynamic routing by modifying the routes.yaml file</div>
+                    <div class="gh-setting-title">Rutas</div>
+                    <div class="gh-setting-desc">Configure el enrutamiento dinámico modificando el archivo route.yaml</div>
                     {{#each uploader.errors as |error|}}
                         <div class="gh-setting-error" data-test-error="routes">{{or error.context error.message}}</div>
                     {{/each}}
@@ -180,15 +180,15 @@
                         >
                             <span>
                                 {{#if this.routesSuccess}}
-                                    {{svg-jar "check-circle"}} Uploaded
+                                    {{svg-jar "check-circle"}} Subido
                                 {{else if this.routesFailure}}
-                                    {{svg-jar "retry"}} Upload Failed
+                                    {{svg-jar "retry"}} Subida Fallida
                                 {{else}}
-                                    Upload routes YAML
+                                    Subir YAML de rutas
                                 {{/if}}
                             </span>
                         </button>
-                        <span><a href="#" {{action "downloadFile" "settings/routes/yaml"}} data-test-link="download-routes">Download current routes.yaml</a></span>
+                        <span><a href="#" {{action "downloadFile" "settings/routes/yaml"}} data-test-link="download-routes">Descargar routes.yaml</a></span>
                     {{/if}}
 
                     <div style="display:none">

@@ -1,14 +1,14 @@
 <header class="modal-header" data-test-modal="delete-members">
-    <h1>Are you sure you want to delete these members?</h1>
+    <h1>Estás seguro de que quieres eliminar estos miembros?</h1>
 </header>
 <a class="close" href="" role="button" title="Close" {{action "closeModal"}}>{{svg-jar "close"}}<span class="hidden">Close</span></a>
 
 {{#if (not this.confirmed)}}
     <div class="modal-body" data-test-state="delete-unconfirmed">
         <p>
-            You're about to delete
+            Estás a punto de borrar
             <strong data-test-text="delete-count">{{gh-pluralize this.model.memberCount "member"}}</strong>.
-            This is permanent! We warned you, k?
+            ¡Esto es permanente! Te lo advertimos, ok?
         </p>
     </div>
 {{else}}

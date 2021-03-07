@@ -47,20 +47,20 @@ export default Service.extend(Evented, {
 
         this.throbbers = [{
             id: 'getting-started',
-            title: 'Getting started with Ghost',
-            message: `Welcome to Ghost Admin! From here you can browse your site, manage your content, and edit your settings.<br><br>You can always login to Ghost Admin by visiting <a href="${adminUrl}" target="_blank">${adminDisplayUrl}</a>`
+            title: 'Empezando con Ghost',
+            message: `¡Bienvenido a Ghost Admin! Desde aquí puede navegar por su sitio, administrar su contenido y editar su configuración.<br><br>Siempre puede iniciar sesión en Ghost Admin visitando <a href="${adminUrl}" target="_blank">${adminDisplayUrl}</a>`
         }, {
             id: 'using-the-editor',
-            title: 'Using the Ghost editor',
-            message: 'Ghost uses Markdown to allow you to write and format content quickly and easily. This toolbar also helps! Hit the <strong>?</strong> icon for more editor shortcuts.'
+            title: 'Usando el editor Ghost',
+            message: 'Ghost usa Markdown para permitirle escribir y formatear contenido de forma rápida y sencilla. ¡Esta barra de herramientas también ayuda! Clickear el ícono <strong>?</strong> para más accesos directos del editor.'
         }, {
             id: 'featured-post',
-            title: 'Setting a featured post',
-            message: 'Depending on your theme, featured posts receive special styling to make them stand out as a particularly important or emphasised story.'
+            title: 'Configurar una publicación destacada',
+            message: 'Dependiendo de su tema, las publicaciones destacadas reciben un estilo especial para que se destaquen como una historia particularmente importante o enfatizada.'
         }, {
             id: 'upload-a-theme',
-            title: 'Customising your publication',
-            message: 'Using custom themes you can completely control the look and feel of your site to suit your brand. Here\'s a full guide to help: <strong><a href="https://ghost.org/docs/themes/" target="_blank">https://ghost.org/docs/themes/</a></strong>'
+            title: 'Personalizando su publicación',
+            message: 'Al usar temas personalizados, puede controlar completamente la apariencia de su sitio para que se adapte a su marca. Aquí hay una guía completa para ayudar: <strong><a href="https://ghost.org/docs/themes/" target="_blank">https://ghost.org/docs/themes/</a></strong>'
         }];
     },
 

@@ -1,30 +1,30 @@
 import PostsController from './posts';
 
 const TYPES = [{
-    name: 'All pages',
+    name: 'Todas las páginas',
     value: null
 }, {
-    name: 'Draft pages',
+    name: 'Páginas borradores',
     value: 'draft'
 }, {
-    name: 'Published pages',
+    name: 'Páginas publicadas',
     value: 'published'
 }, {
-    name: 'Scheduled pages',
+    name: 'Páginas programadas',
     value: 'scheduled'
 }, {
-    name: 'Featured pages',
+    name: 'Páginas destacadas',
     value: 'featured'
 }];
 
 const ORDERS = [{
-    name: 'Newest',
+    name: 'Recientes',
     value: null
 }, {
-    name: 'Oldest',
+    name: 'Antiguas',
     value: 'published_at asc'
 }, {
-    name: 'Recently updated',
+    name: 'Actualizadas recientemente',
     value: 'updated_at desc'
 }];
 

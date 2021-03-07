@@ -22,7 +22,7 @@
                 @onOrderChange={{action "changeOrder"}}
             />
 
-            <LinkTo @route="editor.new" @model="post" class="gh-btn gh-btn-green" data-test-new-post-button={{true}}><span>New post</span></LinkTo>
+            <LinkTo @route="editor.new" @model="post" class="gh-btn gh-btn-green" data-test-new-post-button={{true}}><span>Crear post</span></LinkTo>
         </section>
     </GhCanvasHeader>
 
@@ -31,12 +31,12 @@
             {{#if this.postsInfinityModel}}
                 <li class="gh-list-row header">
                     <div class="gh-list-header no-padding">{{!--Favorite indicator column: no header--}}</div>
-                    <div class="gh-list-header gh-posts-title-header">Title</div>
+                    <div class="gh-list-header gh-posts-title-header">Título</div>
                     {{#if this.feature.emailAnalytics}}
-                        <div class="gh-list-header gh-posts-sends-header">Sends</div>
-                        <div class="gh-list-header gh-posts-opens-header">Opens</div>
+                        <div class="gh-list-header gh-posts-sends-header">Enviadas</div>
+                        <div class="gh-list-header gh-posts-opens-header">Abiertas</div>
                     {{/if}}
-                    <div class="gh-list-header gh-posts-status-header">Status</div>
+                    <div class="gh-list-header gh-posts-status-header">Estado</div>
                 </li>
             {{/if}}
 
@@ -49,14 +49,14 @@
                 <div class="no-posts">
                     {{#if this.showingAll}}
                         {{svg-jar "posts-placeholder" class="gh-posts-placeholder"}}
-                        <h3>You haven't written any posts yet!</h3>
+                        <h3>No hay ningún posts todavía!</h3>
                         <LinkTo @route="editor.new" @model="post" class="gh-btn gh-btn-green gh-btn-lg">
-                            <span>Write a new post</span>
+                            <span>Escribir un nuevo post</span>
                         </LinkTo>
                     {{else}}
-                        <h3>No posts match the current filter</h3>
+                        <h3>No hay posts con el filtro actual</h3>
                         <LinkTo @route="posts" @query={{hash type=null author=null tag=null}} class="gh-btn gh-btn-lg">
-                            <span>Show all posts</span>
+                            <span>Ver todos los posts</span>
                         </LinkTo>
                     {{/if}}
                 </div>

@@ -6,30 +6,30 @@ import {get} from '@ember/object';
 import {inject as service} from '@ember/service';
 
 const TYPES = [{
-    name: 'All posts',
+    name: 'Todos los posts',
     value: null
 }, {
-    name: 'Draft posts',
+    name: 'Posts borradores',
     value: 'draft'
 }, {
-    name: 'Published posts',
+    name: 'Posts publicados',
     value: 'published'
 }, {
-    name: 'Scheduled posts',
+    name: 'Posts programados',
     value: 'scheduled'
 }, {
-    name: 'Featured posts',
+    name: 'Posts destacados',
     value: 'featured'
 }];
 
 const VISIBILITIES = [{
-    name: 'All access',
+    name: 'Acceso a todo',
     value: null
 }, {
-    name: 'Public',
+    name: 'Público',
     value: 'public'
 }, {
-    name: 'Members-only',
+    name: 'Solo para miembros',
     value: 'members'
 }, {
     name: 'Paid members-only',
@@ -37,13 +37,13 @@ const VISIBILITIES = [{
 }];
 
 const ORDERS = [{
-    name: 'Newest',
+    name: 'Recientes',
     value: null
 }, {
-    name: 'Oldest',
+    name: 'Antiguos',
     value: 'published_at asc'
 }, {
-    name: 'Recently updated',
+    name: 'Actualizados recientemente',
     value: 'updated_at desc'
 }];
 
@@ -110,7 +110,7 @@ export default Controller.extend({
             .filter(tag => tag.get('id') !== null)
             .sort((tagA, tagB) => tagA.name.localeCompare(tagB.name, undefined, {ignorePunctuation: true}));
         let options = tags.toArray();
-        options.unshiftObject({name: 'All tags', slug: null});
+        options.unshiftObject({name: 'Todos los tags', slug: null});
 
         return options;
     }),
@@ -130,7 +130,7 @@ export default Controller.extend({
         let authors = this.get('_availableAuthors');
         let options = authors.toArray();
 
-        options.unshiftObject({name: 'All authors', slug: null});
+        options.unshiftObject({name: 'Todos los autores', slug: null});
 
         return options;
     }),

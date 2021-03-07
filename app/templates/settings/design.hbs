@@ -1,7 +1,7 @@
 <section class="gh-canvas">
     <GhCanvasHeader class="gh-canvas-header">
         <h2 class="gh-canvas-title" data-test-screen-title>
-            Design
+            Diseño
         </h2>
         <section class="view-actions">
             <GhTaskButton @task={{this.save}} @class="gh-btn gh-btn-blue gh-btn-icon" data-test-save-button={{true}} />
@@ -16,7 +16,7 @@
     {{/if}}
 
     <section class="view-container">
-        <div class="gh-setting-header gh-first-header">Navigation</div>
+        <div class="gh-setting-header gh-first-header">Navegación</div>
         <div class="gh-blognav-container pa5 pt6 bg-grouped-table shadow-1 br3">
             <form id="settings-navigation" class="gh-blognav" novalidate="novalidate">
                 <SortableObjects @sortableObjectList={{this.settings.navigation}} @useSwap={{false}}>
@@ -43,7 +43,7 @@
             </form>
         </div>
 
-        <div class="gh-setting-header">Secondary Navigation</div>
+        <div class="gh-setting-header">Navegación secundaria</div>
         <div class="gh-blognav-container pa5 pt6 bg-grouped-table shadow-1 br3">
             <form id="secondary-navigation" class="gh-blognav" novalidate="novalidate">
                 <SortableObjects @sortableObjectList={{this.settings.secondaryNavigation}} @useSwap={{false}}>
@@ -70,7 +70,7 @@
             </form>
         </div>
 
-        <div class="gh-setting-header">Theme Directory</div>
+        <div class="gh-setting-header">Directorio de temas</div>
         <div class="gh-theme-directory-container">
             <div class="theme-directory">
                 <a class="td-item" href="https://github.com/TryGhost/Massively" target="_blank" rel="noopener noreferrer">
@@ -129,7 +129,7 @@
                     <div class="td-cta-content-wrapper">
                         <div class="td-cta-content">
                             <h4 class="fw6 f6">Theme Marketplace</h4>
-                            <p>Explore a huge range of free and premium themes for Ghost with a range of design and layout options</p>
+                            <p>Explore una amplia gama de temas gratuitos y premium para Ghost con una variedad de opciones de diseño y diseño</p>
                         </div>
                         <div class="td-cta-arrow">
                             {{svg-jar "arrow-right"}}
@@ -141,7 +141,7 @@
                     <div class="td-cta-content-wrapper">
                         <div class="td-cta-content">
                             <h4 class="fw6 f6">Developer Docs</h4>
-                            <p>Build your own custom Ghost theme from scratch using our comprehensive Handlebars.js SDK</p>
+                            <p>Cree su propio tema Ghost personalizado desde cero con nuestro completo SDK de Handlebars.js</p>
                         </div>
                         <div class="td-cta-arrow">
                             {{svg-jar "arrow-right"}}
@@ -151,7 +151,7 @@
             </div>
         </div>
 
-        <div class="gh-setting-header">Installed Themes</div>
+        <div class="gh-setting-header">Temas Instalados</div>
         <div class="gh-themes-container">
 
             <GhThemeTable
@@ -161,7 +161,7 @@
                 @deleteTheme={{action "deleteTheme"}} />
 
             <LinkTo @route="settings.design.uploadtheme" class="gh-btn gh-btn-green gh-themes-uploadbtn" data-test-upload-theme-button={{true}}>
-                <span>Upload a theme</span>
+                <span>Subir un tema</span>
             </LinkTo>
 
 

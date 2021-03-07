@@ -1,7 +1,7 @@
 <section class="gh-canvas">
     <GhCanvasHeader class="gh-canvas-header">
         <h2 class="gh-canvas-title" data-test-screen-title>
-            Integrations
+            Integraciones
         </h2>
     </GhCanvasHeader>
 
@@ -53,14 +53,14 @@
                 {{!-- <img class="w-100 h-100" style="object-fit:contain;padding:0 8px;" src="assets/img/more.png" alt="Three dots" /> --}}
                 {{svg-jar "circle-ellipsis" class="w5"}}
             </div>
-            <div class="f8 mt1">More</div>
+            <div class="f8 mt1">Mas</div>
         </a>
     </div>
 
     <section class="apps-grid-container">
 
         {{!-- TODO: move fully to spirit and normalize spacing --}}
-        <span class="apps-grid-title pb1">Built-in integrations</span>
+        <span class="apps-grid-title pb1">Integraciones ya incorporadas</span>
         <div class="apps-grid">
             <div class="apps-grid-cell" data-test-app="zapier">
                 <LinkTo @route="settings.integrations.zapier" data-test-link="zapier">
@@ -182,7 +182,7 @@
 
     <section class="apps-grid-container">
 
-        <span class="apps-grid-title pb1">Custom integrations</span>
+        <span class="apps-grid-title pb1">Integraciones personalizadas</span>
         <div class="apps-grid">
             {{#each this.integrations as |integration|}}
                 <div class="apps-grid-cell" data-test-custom-integration>
@@ -219,12 +219,12 @@
                     {{else}}
                         <div class="flex flex-column items-center pa5 pt15 pb15">
                             <p class="ma0 pa0 tc midgrey lh-title mt2">
-                                Create your own custom Ghost integrations with dedicated API keys & webhooks
+                                Cree sus propias integraciones Ghost personalizadas con API y webhooks dedicados
                             </p>
                             <LinkTo @route="settings.integrations.new" class="" data-test-button="new-integration">
                                 <div class="flex items-center pa2 pt1">
                                     {{svg-jar "add" class="w3 h3 fill-blue-d1"}}
-                                    <span class="db ml1 blue nudge-bottom--1">Add custom integration</span>
+                                    <span class="db ml1 blue nudge-bottom--1">Agregar integración personalizada</span>
                                 </div>
                             </LinkTo>
                         </div>
@@ -238,7 +238,7 @@
                 <article class="apps-card-app">
                     <div class="flex items-center">
                         {{svg-jar "add" class="w3 h3 fill-blue-d1"}}
-                        <span class="db ml1 blue nudge-bottom--1 fw4">Add custom integration</span>
+                        <span class="db ml1 blue nudge-bottom--1 fw4">Agregar integración personalizada</span>
                     </div>
                 </article>
                 </LinkTo>

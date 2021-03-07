@@ -3,10 +3,10 @@
         <h2 class="gh-canvas-title" data-test-screen-title>Tags</h2>
         <section class="view-actions">
             <div class="gh-contentfilter gh-btn-group">
-                <button class="gh-btn {{if (eq this.type "public") "gh-btn-group-selected"}}" {{action "changeType" "public"}}><span>Public tags</span></button>
-                <button class="gh-btn {{if (eq this.type "internal") "gh-btn-group-selected"}}" {{action "changeType" "internal"}}><span>Internal tags</span></button>
+                <button class="gh-btn {{if (eq this.type "public") "gh-btn-group-selected"}}" {{action "changeType" "public"}}><span>Tags públicos</span></button>
+                <button class="gh-btn {{if (eq this.type "internal") "gh-btn-group-selected"}}" {{action "changeType" "internal"}}><span>Tags internos</span></button>
             </div>
-            <LinkTo @route="tag.new" class="gh-btn gh-btn-green"><span>New tag</span></LinkTo>
+            <LinkTo @route="tag.new" class="gh-btn gh-btn-green"><span>Nuevo tag</span></LinkTo>
         </section>
     </GhCanvasHeader>
 
@@ -16,7 +16,7 @@
                 <li class="gh-list-row header">
                     <div class="gh-list-header gh-list-cellwidth-70">Tag</div>
                     <div class="gh-list-header gh-list-cellwidth-10">Slug</div>
-                    <div class="gh-list-header gh-list-cellwidth-10">No. of posts</div>
+                    <div class="gh-list-header gh-list-cellwidth-10">No. de posts</div>
                     <div class="gh-list-header gh-list-cellwidth-10"></div>
                 </li>
                 <VerticalCollection @items={{this.sortedTags}} @key="id" @containerSelector=".gh-main" @estimateHeight={{60}} @bufferSize={{20}} as |tag|>
@@ -26,9 +26,9 @@
                 <li class="no-posts-box">
                     <div class="no-posts">
                             {{svg-jar "tags-placeholder" class="gh-tags-placeholder"}}
-                            <h3>You haven't created any {{this.type}} tags yet!</h3>
+                            <h3>No se ha creado ningún tag de este tipo ({{this.type}}) todavía!</h3>
                             <LinkTo @route="tag.new" class="gh-btn gh-btn-green gh-btn-lg">
-                                <span>Create a new tag</span>
+                                <span>Crear un nuevo tag</span>
                             </LinkTo>
                     </div>
                 </li>

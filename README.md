@@ -1,4 +1,4 @@
-# Ghost-Admin
+# Ghost-Admin (Custom spanish version from release 3.42.0)
 
 ![](https://github.com/TryGhost/Admin/workflows/Test%20Suite/badge.svg?branch=master)
 
